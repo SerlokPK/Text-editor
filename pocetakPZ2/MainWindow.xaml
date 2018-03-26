@@ -1,0 +1,97 @@
+﻿<Window x:Class="pocetakPZ2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pocetakPZ2"
+        mc:Ignorable="d"
+        Title="MainWindow"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Canvas  Height="450" Width="700">
+        <Path Stroke="AliceBlue" StrokeThickness="4" Name="UIPath" Stretch="Fill" Width="534.186" Height="368" Canvas.Left="-24" Canvas.Top="20">
+            <Path.Fill>
+                <ImageBrush ImageSource="images/blue-background_1344-24.jpg"/>
+            </Path.Fill>
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="50,25">
+                        <LineSegment Point="15,40"/>
+                        <LineSegment Point="15,300"/>
+                        <LineSegment Point="50,350"/>
+                        <LineSegment Point="50,320"/>
+                        <LineSegment Point="140,320"/>
+                        <LineSegment Point="175,320"/>
+                        <LineSegment Point="175,350"/>
+                        <LineSegment Point="326,350"/>
+                        <LineSegment Point="326,320"/>
+                        <LineSegment Point="450,320"/>
+                        <LineSegment Point="450,350"/>
+                        <LineSegment Point="470,320"/>
+                        <LineSegment Point="470,40"/>
+                        <LineSegment Point="435,25"/>
+                        <LineSegment Point="435,45"/>
+                        <LineSegment Point="50,45"/>
+                        <LineSegment Point="50,25"/>
+
+
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <DockPanel Height="245" LastChildFill="False" Canvas.Left="24" Canvas.Top="53" Width="438">
+            <ToolBar DockPanel.Dock="Top">
+                <Button Name="btnNew"  Click="btnNew_Click" Width="30" VerticalAlignment="Bottom" Height="22" >
+                    
+                        <Image Source="images/proba.png"/>
+                    
+                </Button>
+                <Separator/>
+                <Button Name="btnOpen" Height="22" Click="btnOpen_Click" Width="30">
+                    
+                        <Image Source="images/open.jpg"/>
+                    
+                </Button>
+                <Separator/>
+                <Button Name="btnSave" Height="22" Click="btnSave_Click" Width="30">
+                    
+                        <Image Source="save.jpg"/>
+                    
+                </Button>
+                <Separator/>
+                <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold" Content="B"/>
+                <Separator/>
+                <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic" Content="I"/>
+                <Separator/>
+                <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline" Content="U"/>
+                <Separator/>
+                <ComboBox Name="cmbFontFamily" Width="100" SelectionChanged="cmbFontFamily_SelectionChanged"/>
+                <Separator/>
+                <Button Name="btnColor" Width="30" Height="22" Click="btnColor_Click">
+                    
+                        <Image Source="stock-vector-art-rainbow-color-brush-stroke-painting-vector-background-601026203.jpg"/>
+                    
+                </Button>
+                <Separator/>
+                <ComboBox Name="cmbSize" Width="30" SelectionChanged="cmbSize_SelectionChanged"/>
+                <Separator/>
+                <Button  Name="btnDateTime" Height="22" Width="30" Click="btnDateTime_Click"  >
+                    
+                        <Image Source="images/calendar-512.png"/>
+                    
+                </Button>
+
+            </ToolBar>
+            <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" KeyDown="rtbEditor_KeyDown">
+                <FlowDocument>
+                    <Paragraph/>
+                </FlowDocument>
+            </RichTextBox>
+        </DockPanel>
+        <Button Name="buttonClose" Content="Close" Canvas.Left="183" Canvas.Top="336" Width="137" Height="37" Click="buttonClose_Click" Background="#FFB5B7EA" FontFamily="Verdana" FontSize="24"/>
+        <Label x:Name="lblBrReci" Canvas.Left="423" Canvas.Top="307" Width="39" Height="35" FontSize="18" FontWeight="Bold" Background="#FFB0EAE2"/>
+        <Label x:Name="lblIspis" Content="Words:" Canvas.Left="338" Canvas.Top="307" Width="80" Background="#FFB0EAE2" Height="35" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="textBoxSearch" Height="16" Canvas.Left="101" TextWrapping="Wrap"  Canvas.Top="303" Width="67" FontSize="10"/>
+        <TextBox x:Name="textBoxReplace" Height="16" Canvas.Left="101" TextWrapping="Wrap"  Canvas.Top="328" Width="67" FontSize="10"/>
+        <Button x:Name="btnSearch" Content="Search" Canvas.Left="24" Canvas.Top="303" Width="67" Height="16" FontWeight="Bold" FontSize="10" Background="#FFB5B7EA" FontFamily="Verdana" Click="btnSearch_Click"/>
+        <Button x:Name="btnReaplce" Content="Replace" Canvas.Left="24" Canvas.Top="328" Width="67" Height="16" FontWeight="Bold" FontSize="10" Background="#FFB5B7EA" FontFamily="Verdana" Click="btnReaplce_Click"/>
+    </Canvas>
+</Window>
